@@ -48,6 +48,14 @@ public class AnimationRecorder : MonoBehaviour
                 recordingTime = 0f;
                 InitializeRecording();
             }
+            else
+            {
+                Debug.Log("Saving objects");
+                for (int i = 0, count = TrackedObjects.Count; i < count; ++i)
+                {
+                    SaveAnimationFile(TrackedObjects[i]);
+                }
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.P) && !isRecording)
@@ -85,4 +93,9 @@ public class AnimationRecorder : MonoBehaviour
             }
         }
 	}
+
+    private void SaveAnimationFile(TrackedObject obj)
+    {
+
+    }
 }
