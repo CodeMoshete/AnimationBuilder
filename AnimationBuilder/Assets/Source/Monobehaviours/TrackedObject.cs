@@ -17,7 +17,11 @@ public struct Keyframe
 
 public class TrackedObject : MonoBehaviour
 {
+    public string AnimationName;
     public List<Keyframe> Keyframes;
+
+    [HideInInspector]
+    public float StopTime;
 
     private int currentKeyframeIndex;
 
@@ -28,6 +32,7 @@ public class TrackedObject : MonoBehaviour
 
     public void RecordKeyframe(float timeStamp)
     {
+        StopTime = timeStamp;
         Keyframes.Add(
             new Keyframe(timeStamp, transform.localPosition, transform.localEulerAngles));
     }

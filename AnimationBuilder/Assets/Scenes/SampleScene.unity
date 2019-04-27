@@ -311,6 +311,7 @@ GameObject:
   - component: {fileID: 783748612}
   - component: {fileID: 783748611}
   - component: {fileID: 783748615}
+  - component: {fileID: 783748616}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -329,6 +330,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68d406aa3110fa0409d2e850768573d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AnimationName: Sphere
+  StopTime: 0
 --- !u!23 &783748612
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -395,3 +398,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 881a43cfd9f115f4593f13b54d48ddb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &783748616
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 783748610}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d60baa9a1afe26d4eb411358a9cfaf77, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

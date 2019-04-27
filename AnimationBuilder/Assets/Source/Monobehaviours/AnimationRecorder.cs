@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
 public class AnimationRecorder : MonoBehaviour
@@ -96,6 +97,96 @@ public class AnimationRecorder : MonoBehaviour
 
     private void SaveAnimationFile(TrackedObject obj)
     {
+        string output = 
+            string.Format(AnimationStringUtils.FILE_CONTENTS_HEADER, obj.AnimationName);
 
+        output += AnimationStringUtils.POST_ANIM_NAME_CONTENTS;
+        for (int i = 0, count = obj.Keyframes.Count; i < count; ++i)
+        {
+            output += GenerateEulerCurveString(obj.Keyframes[i]);
+        }
+        output += AnimationStringUtils.CURVE_POS_SEP;
+        for (int i = 0, count = obj.Keyframes.Count; i < count; ++i)
+        {
+            output += GeneratePosCurveString(obj.Keyframes[i]);
+        }
+        output += string.Format(AnimationStringUtils.STOP_TIME_PREFIX, obj.StopTime);
+        output += AnimationStringUtils.EDITOR_CURVES_PREFIX;
+
+        // Editor position curves
+        for (int i = 0, count = obj.Keyframes.Count; i < count; ++i)
+        {
+            Keyframe frame = obj.Keyframes[i];
+            output += GenerateEditorCurve(frame, frame.position.x);
+        }
+        output += AnimationStringUtils.EDITOR_POS_SEP_X;
+        for (int i = 0, count = obj.Keyframes.Count; i < count; ++i)
+        {
+            Keyframe frame = obj.Keyframes[i];
+            output += GenerateEditorCurve(frame, frame.position.y);
+        }
+        output += AnimationStringUtils.EDITOR_POS_SEP_Y;
+        for (int i = 0, count = obj.Keyframes.Count; i < count; ++i)
+        {
+            Keyframe frame = obj.Keyframes[i];
+            output += GenerateEditorCurve(frame, frame.position.z);
+        }
+        output += AnimationStringUtils.EDITOR_POS_SEP_Z;
+
+        // Editor rotation curves
+        for (int i = 0, count = obj.Keyframes.Count; i < count; ++i)
+        {
+            Keyframe frame = obj.Keyframes[i];
+            output += GenerateEditorCurve(frame, frame.rotation.x);
+        }
+        output += AnimationStringUtils.EDITOR_EULER_SEP_X;
+        for (int i = 0, count = obj.Keyframes.Count; i < count; ++i)
+        {
+            Keyframe frame = obj.Keyframes[i];
+            output += GenerateEditorCurve(frame, frame.rotation.y);
+        }
+        output += AnimationStringUtils.EDITOR_EULER_SEP_Y;
+        for (int i = 0, count = obj.Keyframes.Count; i < count; ++i)
+        {
+            Keyframe frame = obj.Keyframes[i];
+            output += GenerateEditorCurve(frame, frame.rotation.z);
+        }
+        output += AnimationStringUtils.EDITOR_EULER_SEP_Z_END;
+
+        File.WriteAllText("./Assets/" + obj.AnimationName + "_Animation.anim", output);
+    }
+
+    private string GenerateEulerCurveString(Keyframe frame)
+    {
+        string output = string.Format(
+            AnimationStringUtils.CURVE_TEMPLATE, 
+            frame.timeStamp,
+            frame.rotation.x, 
+            frame.rotation.y, 
+            frame.rotation.z);
+
+        return output;
+    }
+
+    private string GeneratePosCurveString(Keyframe frame)
+    {
+        string output = string.Format(
+            AnimationStringUtils.CURVE_TEMPLATE,
+            frame.timeStamp,
+            frame.position.x,
+            frame.position.y,
+            frame.position.z);
+
+        return output;
+    }
+
+    private string GenerateEditorCurve(Keyframe frame, float value)
+    {
+        string output = string.Format(
+            AnimationStringUtils.EDITOR_CURVE_TEMPLATE,
+            frame.timeStamp,
+            value);
+
+        return output;
     }
 }
