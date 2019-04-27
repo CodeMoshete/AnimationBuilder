@@ -20,13 +20,41 @@ public class AnimationRecorder : MonoBehaviour
 
     private void InitializeRecording()
     {
-        for (int i = 0, count = TrackedObjects.Count; i < count; ++i)
+        if (!isRecording)
         {
-            TrackedObjects[i].InitializeRecord();
+            Debug.Log("Recording...");
+            currentTimestepTime = 0f;
+            recordingTime = 0f;
+            isRecording = true;
+
+            for (int i = 0, count = TrackedObjects.Count; i < count; ++i)
+            {
+                TrackedObjects[i].InitializeRecord();
+            }
+        }
+        else
+        {
+            Debug.LogError("Error! Finish the current recording before starting another.");
         }
     }
 
-    private void InitializePlay()
+    public void EndRecording()
+    {
+        if (isRecording)
+        {
+            Debug.Log("Saving objects");
+            for (int i = 0, count = TrackedObjects.Count; i < count; ++i)
+            {
+                SaveAnimationFile(TrackedObjects[i]);
+            }
+        }
+        else
+        {
+            Debug.LogError("Error! No recording currently taking place!");
+        }
+    }
+
+    public void InitializePlay()
     {
         for (int i = 0, count = TrackedObjects.Count; i < count; ++i)
         {
@@ -44,18 +72,11 @@ public class AnimationRecorder : MonoBehaviour
 
             if (isRecording)
             {
-                Debug.Log("Recording...");
-                currentTimestepTime = 0f;
-                recordingTime = 0f;
                 InitializeRecording();
             }
             else
             {
-                Debug.Log("Saving objects");
-                for (int i = 0, count = TrackedObjects.Count; i < count; ++i)
-                {
-                    SaveAnimationFile(TrackedObjects[i]);
-                }
+                EndRecording();
             }
         }
 
