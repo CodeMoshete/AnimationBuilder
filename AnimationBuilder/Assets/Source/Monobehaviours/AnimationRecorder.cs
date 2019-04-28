@@ -4,6 +4,14 @@ using UnityEngine;
 
 public class AnimationRecorder : MonoBehaviour
 {
+    public GameObject LeftHand;
+    public GameObject RightHand;
+    public GameObject Head;
+
+    private ManipulatorComponent leftHandManipulator;
+    private ManipulatorComponent rightHandManipulator;
+    private ManipulatorComponent headManipulator;
+
     public List<TrackedObject> TrackedObjects;
     public float Timestep = 0.1f;
 
@@ -14,8 +22,34 @@ public class AnimationRecorder : MonoBehaviour
 
 	void Start ()
     {
+        if (LeftHand == null || RightHand == null || Head == null)
+        {
+            Debug.LogError("Tracking not assigned! Please ensure the CameraRig prefab is present!");
+        }
+        else
+        {
+            leftHandManipulator = LeftHand.AddComponent<ManipulatorComponent>();
+            rightHandManipulator = RightHand.AddComponent<ManipulatorComponent>();
+            headManipulator = Head.AddComponent<ManipulatorComponent>();
+        }
+
         isRecording = false;
         isPlaying = false;
+
+        Service.EventManager.AddListener(EventId.VRControllerTriggerPress, OnTriggerPressed);
+    }
+
+    private bool OnTriggerPressed(object cookie)
+    {
+        if (!isRecording)
+        {
+            InitializeRecording();
+        }
+        else
+        {
+            EndRecording();
+        }
+        return true;
     }
 
     private void InitializeRecording()

@@ -24,6 +24,33 @@ public class TrackedObject : MonoBehaviour
     public float StopTime;
 
     private int currentKeyframeIndex;
+    private Transform parentManipulator;
+    private Vector3 previousParentPos;
+    private Vector3 previousParentEuler;
+
+    public void Start()
+    {
+        BoxCollider collider = gameObject.GetComponent<BoxCollider>();
+        if (collider == null)
+        {
+            collider = gameObject.AddComponent<BoxCollider>();
+            collider.isTrigger = true;
+        }
+    }
+
+    public void Update()
+    {
+        if (parentManipulator != null)
+        {
+            Vector3 deltaPos = parentManipulator.position - previousParentPos;
+            transform.position += deltaPos;
+            previousParentPos = parentManipulator.position;
+
+            Vector3 deltaEuler = parentManipulator.eulerAngles - previousParentEuler;
+            transform.eulerAngles += deltaEuler;
+            previousParentEuler = parentManipulator.eulerAngles;
+        }
+    }
 
     public void InitializeRecord()
     {
@@ -57,5 +84,17 @@ public class TrackedObject : MonoBehaviour
         Keyframe currentFrame = Keyframes[currentKeyframeIndex];
         transform.localEulerAngles = currentFrame.rotation;
         transform.localPosition = currentFrame.position;
+    }
+
+    public void LockToManipulator(Transform manipulatorObject)
+    {
+        parentManipulator = manipulatorObject;
+        previousParentPos = parentManipulator.position;
+        previousParentEuler = parentManipulator.eulerAngles;
+    }
+
+    public void ReleaseFromManipulator()
+    {
+        parentManipulator = null;
     }
 }

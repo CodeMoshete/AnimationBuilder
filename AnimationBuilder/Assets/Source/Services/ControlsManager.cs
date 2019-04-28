@@ -60,7 +60,7 @@ public class ControlsManager
         if (touchpadListeners.Count > 0)
         {
             TouchpadUpdate touchUpdate = new TouchpadUpdate();
-#if UNITY_EDITOR
+#if KEYBOARD_CONTROLS
             touchUpdate.TouchpadPosition = new Vector2(0f, 0f);
             if (Input.GetKey(KeyCode.W))
             {
@@ -91,9 +91,9 @@ public class ControlsManager
                 Input.GetKey(KeyCode.S) ||
                 Input.GetKey(KeyCode.D);
 #else
-            touchUpdate.TouchpadPosition = OVRInput.Get(OVRInput.Axis2D.PrimaryTouchpad);
-            touchUpdate.TouchpadPressState = OVRInput.Get(OVRInput.Button.PrimaryTouchpad);
-            touchUpdate.TouchpadClicked = OVRInput.GetDown(OVRInput.Button.PrimaryTouchpad);
+            // touchUpdate.TouchpadPosition = OVRInput.Get(OVRInput.Axis2D.PrimaryTouchpad);
+            // touchUpdate.TouchpadPressState = OVRInput.Get(OVRInput.Button.PrimaryTouchpad);
+            // touchUpdate.TouchpadClicked = OVRInput.GetDown(OVRInput.Button.PrimaryTouchpad);
 #endif
             touchpadListeners[touchpadListeners.Count - 1](touchUpdate);
         }
@@ -101,12 +101,12 @@ public class ControlsManager
         if (triggerListeners.Count > 0)
         {
             TriggerUpdate triggerUpdate = new TriggerUpdate();
-#if UNITY_EDITOR
+#if KEYBOARD_CONTROLS
             triggerUpdate.TriggerClicked = Input.GetKeyDown(KeyCode.I);
             triggerUpdate.TriggerPressState = Input.GetKey(KeyCode.I);
 #else
-            triggerUpdate.TriggerPressState = OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger);
-            triggerUpdate.TriggerClicked = OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger);
+            // triggerUpdate.TriggerPressState = OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger);
+            // triggerUpdate.TriggerClicked = OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger);
 #endif
             triggerListeners[triggerListeners.Count - 1](triggerUpdate);
         }
@@ -114,12 +114,12 @@ public class ControlsManager
         if (backButtonListeners.Count > 0)
         {
             BackButtonUpdate backButtonUpdate = new BackButtonUpdate();
-#if UNITY_EDITOR
+#if KEYBOARD_CONTROLS
             backButtonUpdate.BackButtonClicked = Input.GetKeyDown(KeyCode.Escape);
             backButtonUpdate.BackButtonPressState = Input.GetKey(KeyCode.Escape);
 #else
-            backButtonUpdate.BackButtonPressState = OVRInput.Get(OVRInput.Button.Back);
-            backButtonUpdate.BackButtonClicked = OVRInput.GetDown(OVRInput.Button.Back);
+            // backButtonUpdate.BackButtonPressState = OVRInput.Get(OVRInput.Button.Back);
+            // backButtonUpdate.BackButtonClicked = OVRInput.GetDown(OVRInput.Button.Back);
 #endif
             backButtonListeners[backButtonListeners.Count - 1](backButtonUpdate);
         }
