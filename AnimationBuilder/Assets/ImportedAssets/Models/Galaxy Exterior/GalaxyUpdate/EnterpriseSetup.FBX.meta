@@ -1,0 +1,361 @@
+fileFormatVersion: 2
+guid: c75f2bb226e31264faf9edfa36aabcde
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Box02
+    100002: Box03
+    100004: ChamferBox02
+    100006: ChamferBox03
+    100008: ChamferBox04
+    100010: ChamferBox05
+    100012: ChamferBox06
+    100014: ChamferBox07
+    100016: ChamferBox08
+    100018: ChamferBox09
+    100020: ChamferBox11
+    100022: ChamferBox13
+    100024: ChamferBox14
+    100026: ChamferCyl02
+    100028: Circle03
+    100030: Circle04
+    100032: ConnecterRidge01
+    100034: Cylinder03
+    100036: Cylinder05
+    100038: Cylinder06
+    100040: Cylinder10
+    100042: Cylinder11
+    100044: Cylinder12
+    100046: EngineeringTop01
+    100048: Enterprise
+    100050: //RootNode
+    100052: Nacelle02
+    100054: Nacelle03
+    100056: nacelleSupports01
+    100058: nacelleSupportTop01
+    100060: Object04
+    100062: Object05
+    100064: Object06
+    100066: SaucerBottom01
+    100068: SaucerBottomOuter01
+    100070: SaucerConnecterBack01
+    100072: SaucerSide01
+    100074: ShuttlebayCeiling
+    100076: ShuttlebayFloor
+    100078: ShuttlebayInterior01
+    100080: Sphere01
+    100082: Sphere02  01
+    100084: Sphere04
+    400000: Box02
+    400002: Box03
+    400004: ChamferBox02
+    400006: ChamferBox03
+    400008: ChamferBox04
+    400010: ChamferBox05
+    400012: ChamferBox06
+    400014: ChamferBox07
+    400016: ChamferBox08
+    400018: ChamferBox09
+    400020: ChamferBox11
+    400022: ChamferBox13
+    400024: ChamferBox14
+    400026: ChamferCyl02
+    400028: Circle03
+    400030: Circle04
+    400032: ConnecterRidge01
+    400034: Cylinder03
+    400036: Cylinder05
+    400038: Cylinder06
+    400040: Cylinder10
+    400042: Cylinder11
+    400044: Cylinder12
+    400046: EngineeringTop01
+    400048: Enterprise
+    400050: //RootNode
+    400052: Nacelle02
+    400054: Nacelle03
+    400056: nacelleSupports01
+    400058: nacelleSupportTop01
+    400060: Object04
+    400062: Object05
+    400064: Object06
+    400066: SaucerBottom01
+    400068: SaucerBottomOuter01
+    400070: SaucerConnecterBack01
+    400072: SaucerSide01
+    400074: ShuttlebayCeiling
+    400076: ShuttlebayFloor
+    400078: ShuttlebayInterior01
+    400080: Sphere01
+    400082: Sphere02  01
+    400084: Sphere04
+    2300000: Box02
+    2300002: Box03
+    2300004: ChamferBox02
+    2300006: ChamferBox03
+    2300008: ChamferBox04
+    2300010: ChamferBox05
+    2300012: ChamferBox06
+    2300014: ChamferBox07
+    2300016: ChamferBox08
+    2300018: ChamferBox09
+    2300020: ChamferBox11
+    2300022: ChamferBox13
+    2300024: ChamferBox14
+    2300026: ChamferCyl02
+    2300028: Circle03
+    2300030: Circle04
+    2300032: ConnecterRidge01
+    2300034: Cylinder03
+    2300036: Cylinder05
+    2300038: Cylinder06
+    2300040: Cylinder10
+    2300042: Cylinder11
+    2300044: Cylinder12
+    2300046: EngineeringTop01
+    2300048: nacelleSupports01
+    2300050: nacelleSupportTop01
+    2300052: Object04
+    2300054: Object05
+    2300056: Object06
+    2300058: SaucerBottom01
+    2300060: SaucerBottomOuter01
+    2300062: SaucerConnecterBack01
+    2300064: SaucerSide01
+    2300066: ShuttlebayCeiling
+    2300068: ShuttlebayFloor
+    2300070: ShuttlebayInterior01
+    2300072: Sphere01
+    2300074: Sphere02  01
+    2300076: Sphere04
+    3300000: Box02
+    3300002: Box03
+    3300004: ChamferBox02
+    3300006: ChamferBox03
+    3300008: ChamferBox04
+    3300010: ChamferBox05
+    3300012: ChamferBox06
+    3300014: ChamferBox07
+    3300016: ChamferBox08
+    3300018: ChamferBox09
+    3300020: ChamferBox11
+    3300022: ChamferBox13
+    3300024: ChamferBox14
+    3300026: ChamferCyl02
+    3300028: Circle03
+    3300030: Circle04
+    3300032: ConnecterRidge01
+    3300034: Cylinder03
+    3300036: Cylinder05
+    3300038: Cylinder06
+    3300040: Cylinder10
+    3300042: Cylinder11
+    3300044: Cylinder12
+    3300046: EngineeringTop01
+    3300048: nacelleSupports01
+    3300050: nacelleSupportTop01
+    3300052: Object04
+    3300054: Object05
+    3300056: Object06
+    3300058: SaucerBottom01
+    3300060: SaucerBottomOuter01
+    3300062: SaucerConnecterBack01
+    3300064: SaucerSide01
+    3300066: ShuttlebayCeiling
+    3300068: ShuttlebayFloor
+    3300070: ShuttlebayInterior01
+    3300072: Sphere01
+    3300074: Sphere02  01
+    3300076: Sphere04
+    4300000: Box02
+    4300002: Sphere02  01
+    4300004: Sphere01
+    4300006: SaucerBottom01
+    4300008: SaucerSide01
+    4300010: ChamferCyl02
+    4300012: Circle03
+    4300014: Circle04
+    4300016: SaucerBottomOuter01
+    4300018: Cylinder03
+    4300020: ConnecterRidge01
+    4300022: SaucerConnecterBack01
+    4300024: Sphere04
+    4300026: Cylinder05
+    4300028: EngineeringTop01
+    4300030: ChamferBox11
+    4300032: nacelleSupports01
+    4300034: nacelleSupportTop01
+    4300036: ChamferBox04
+    4300038: ChamferBox03
+    4300040: ChamferBox02
+    4300042: ChamferBox05
+    4300044: ChamferBox06
+    4300046: ChamferBox07
+    4300048: ChamferBox08
+    4300050: ChamferBox09
+    4300052: Cylinder06
+    4300054: Cylinder10
+    4300056: Cylinder11
+    4300058: Object04
+    4300060: Object05
+    4300062: Cylinder12
+    4300064: ChamferBox13
+    4300066: Box03
+    4300068: Object06
+    4300070: ChamferBox14
+    4300072: ShuttlebayInterior01
+    4300074: ShuttlebayFloor
+    4300076: ShuttlebayCeiling
+    9500000: //RootNode
+    2186277476908879412: ImportLogs
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 03 - Defaultdfhr6h
+    second: {fileID: 2100000, guid: 9aa5c420d7ec9044ebad7eebc2b114c4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 04 - Default
+    second: {fileID: 2100000, guid: d9e37be2666da50499c24732a49006f0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 07 - Default
+    second: {fileID: 2100000, guid: 77a40436ef043274db400ad8e01a7186, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 09 - Default
+    second: {fileID: 2100000, guid: bfc75033ea0ec444e8f3e806ff8a2f1c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 10 - Default
+    second: {fileID: 2100000, guid: b7e8bbbdac0e0ef4d87227228de5cc0e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 13 - Default4t34
+    second: {fileID: 2100000, guid: a1651ca836aa1be4ebf08a994b160467, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 13 - Default4t344
+    second: {fileID: 2100000, guid: a1651ca836aa1be4ebf08a994b160467, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 13 - Default4t3490u8
+    second: {fileID: 2100000, guid: a1651ca836aa1be4ebf08a994b160467, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 14 - Defaultaw4t3ta
+    second: {fileID: 2100000, guid: b42ecf53f4b221849853c18d97875c78, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 15 - Default
+    second: {fileID: 2100000, guid: e76c05402b7821a48aa8dc872e3b9027, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 15 - Defaultawf34f34
+    second: {fileID: 2100000, guid: e76c05402b7821a48aa8dc872e3b9027, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 16 - Default
+    second: {fileID: 2100000, guid: bf3592a8fbae2fe4cae7227c0f608045, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #0'
+    second: {fileID: 2100000, guid: 2d030b4fb6b24674ea59e6bfc568a8a9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: No Name
+    second: {fileID: 2100000, guid: 0b10a233f9c86bc489aed49397986ef3, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.01
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 0
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 4
+    normalCalculationMode: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

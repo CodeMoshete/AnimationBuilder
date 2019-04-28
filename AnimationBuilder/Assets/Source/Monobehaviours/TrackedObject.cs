@@ -23,6 +23,7 @@ public class TrackedObject : MonoBehaviour
     [HideInInspector]
     public float StopTime;
 
+    private GameObject refObj;
     private int currentKeyframeIndex;
     private Transform parentManipulator;
     private Vector3 previousParentPos;
@@ -42,13 +43,8 @@ public class TrackedObject : MonoBehaviour
     {
         if (parentManipulator != null)
         {
-            Vector3 deltaPos = parentManipulator.position - previousParentPos;
-            transform.position += deltaPos;
-            previousParentPos = parentManipulator.position;
-
-            Vector3 deltaEuler = parentManipulator.eulerAngles - previousParentEuler;
-            transform.eulerAngles += deltaEuler;
-            previousParentEuler = parentManipulator.eulerAngles;
+            transform.position = refObj.transform.position;
+            transform.rotation = refObj.transform.rotation;
         }
     }
 
@@ -89,8 +85,12 @@ public class TrackedObject : MonoBehaviour
     public void LockToManipulator(Transform manipulatorObject)
     {
         parentManipulator = manipulatorObject;
+        refObj = GameObject.Instantiate(new GameObject());
+        refObj.transform.position = transform.position;
+        refObj.transform.rotation = transform.rotation;
+        refObj.transform.SetParent(parentManipulator);
         previousParentPos = parentManipulator.position;
-        previousParentEuler = parentManipulator.eulerAngles;
+        previousParentEuler = parentManipulator.eulerAngles - transform.eulerAngles;
     }
 
     public void ReleaseFromManipulator()

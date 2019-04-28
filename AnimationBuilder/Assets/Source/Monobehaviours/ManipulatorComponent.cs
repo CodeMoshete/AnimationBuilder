@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using Utils;
 
 public class ManipulatorComponent : MonoBehaviour
 {
@@ -7,6 +8,7 @@ public class ManipulatorComponent : MonoBehaviour
 
     public Transform CurrentTarget { get; private set; }
     public TrackedObject CurrentTrackedObject { get; private set; }
+    private GameObject model;
 
     void Start ()
     {
@@ -30,6 +32,8 @@ public class ManipulatorComponent : MonoBehaviour
             vrInterface = gameObject.AddComponent<VRControllerInterface>();
             vrInterface.RegisterGripPressListener(OnGripAction);
         }
+
+        model = UnityUtils.FindGameObject(gameObject, "Model");
 	}
 
     private void OnGripAction(bool isPressed)
@@ -39,11 +43,13 @@ public class ManipulatorComponent : MonoBehaviour
             if (!IsGrabbing && CurrentTarget != null)
             {
                 CurrentTrackedObject.LockToManipulator(transform);
+                model.SetActive(false);
                 IsGrabbing = true;
             }
             else if (IsGrabbing)
             {
                 CurrentTrackedObject.ReleaseFromManipulator();
+                model.SetActive(true);
                 IsGrabbing = false;
             }
         }

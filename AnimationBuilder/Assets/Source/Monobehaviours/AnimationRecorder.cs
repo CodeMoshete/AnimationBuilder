@@ -43,10 +43,12 @@ public class AnimationRecorder : MonoBehaviour
     {
         if (!isRecording)
         {
+            Service.EventManager.SendEvent(EventId.RecordingStarted, null);
             InitializeRecording();
         }
         else
         {
+            Service.EventManager.SendEvent(EventId.RecordingEnded, null);
             EndRecording();
         }
         return true;

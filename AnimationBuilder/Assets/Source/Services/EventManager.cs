@@ -12,7 +12,9 @@ public enum EventId
     ManipulatorEnter,
     ManipulatorExit,
     ObjectGrabbed,
-    ObjectReleased
+    ObjectReleased,
+    RecordingStarted,
+    RecordingEnded
 }
 
 public delegate bool EventCallback(object cookie);
